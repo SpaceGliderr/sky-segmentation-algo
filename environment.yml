@@ -1,0 +1,7 @@
+name: sky-segmentation-algo
+dependencies:
+  - numpy
+  - pip
+  - pip:
+      - opencv-python
+      - matplotlib
