@@ -9,7 +9,10 @@ if __name__ == '__main__':
     ori_img = cv2.imread(curr_img_path, cv2.IMREAD_COLOR)
 
     # Segment the sky
-    sky_mask, sky = detector.segment_sky(ori_img, True)
+    sky_mask, sky = detector.initial_segment_sky(ori_img, True)
 
     # Performance test
     performance.evaluate(detector.initial_segment_sky)
+
+    # To evaluate the masks in the results folder
+    performance.evaluate_results("1093")

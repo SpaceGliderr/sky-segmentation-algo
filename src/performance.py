@@ -117,17 +117,15 @@ def evaluate(algorithm):
         print(f'Total: {totals} - TN:{dtn + ntn} FP:{dfp + nfp} FN:{dfn + nfn} TP:{dtp + ntp}')
 
 
-def evaluate_results():
-    results_dir_name = "10917"
+def evaluate_results(results_dir_name):
     dir_name = f'results/{results_dir_name}'
 
     imgs_filenames = next(walk(f'./{dir_name}'), (None, None, []))[2] # Gets all the filenames in the target image set directory.
-    imgs_filenames.sort(key=lambda x: (int(x.split('.')[0].split('_')[0]), int(x.split('.')[0].split('_')[1]))) # Sorts image filenames in ascending order
 
     # Performance metrics
     total_list = []
 
-    total = 0, 0, 0
+    total = 0
 
     for curr_img_filename in imgs_filenames:
         # Read selected image
